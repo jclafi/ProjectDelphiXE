@@ -1,0 +1,48 @@
+unit uComponenteNaoVisual;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, VCL.Dialogs;
+
+type
+  TMensagem = class(TComponent)
+  private
+    { Private declarations }
+
+    FPalavra : String;
+    FCodigo : Integer;
+
+    FTesteBol : Boolean;
+
+    procedure pMostraDados;
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+  published
+    { Published declarations }
+
+    property Palavra : String read FPalavra write FPalavra;
+    property Codigo : Integer read FCodigo write FCodigo;
+
+    property TesteBol : Boolean read FTesteBol write FTesteBol;
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('Samples', [TMensagem]);
+end;
+
+{ TMensagem }
+
+procedure TMensagem.pMostraDados;
+begin
+  MessageDlg('');
+end;
+
+end.

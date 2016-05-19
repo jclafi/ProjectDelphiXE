@@ -1,0 +1,37 @@
+unit uComponentNaoVisual;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TComponentNaoVisual = class(TComponent)
+  private
+    { Private declarations }
+
+    FTesteNaoVisual : Boolean;
+
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+
+  published
+    { Published declarations }
+
+    property TesteNaoVisual : Boolean read FTesteNaoVisual write FTesteNaoVisual;
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('Samples', [TComponentNaoVisual]);
+end;
+
+{ TComponentNaoVisual }
+
+end.

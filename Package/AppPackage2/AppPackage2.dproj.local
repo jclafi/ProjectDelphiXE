@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2016/02/03 10:18:43.112,=rtl.dcp</Transaction>
+    <Transaction>2016/02/03 10:19:19.316,=C:\Users\Julio Cesar\Desktop\Testes\Package\AppBase\uForm2.pas</Transaction>
+    <Transaction>2016/02/03 10:19:28.493,=vcl.dcp</Transaction>
+    <Transaction>2016/02/03 10:20:12.633,C:\Users\Julio Cesar\Desktop\Testes\Package\AppPackage2\AppPackage2.dproj=C:\Users\Julio Cesar\Documents\RAD Studio\Projects\Package1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

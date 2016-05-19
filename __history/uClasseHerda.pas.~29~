@@ -1,0 +1,46 @@
+unit uClasseHerda;
+
+interface
+
+uses uTeste, Dialogs, Classes;
+
+type
+  TClasseTeste = Class(TFigura)
+    private
+      sssarray : TstringList;
+
+    protected
+
+    public
+      constructor Create(); override;
+      destructor Destroy(); override;
+
+      procedure pAtz; override;
+  End;
+
+implementation
+
+{ TClasseTeste }
+
+constructor TClasseTeste.Create;
+begin
+  ShowMessage('Create');
+  sssarray := TStringList.Create;
+end;
+
+destructor TClasseTeste.Destroy;
+begin
+
+  ShowMessage('Destroy');
+end;
+
+procedure TClasseTeste.pAtz;
+begin
+  inherited;
+
+  FLado := 'Teste Lado';
+
+  ShowMessage('ATZ' + FLado);
+end;
+
+end.

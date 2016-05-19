@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/01/09 15:57:25.000.038,=rtl.dcp</Transaction>
+    <Transaction>2016/01/09 15:57:44.000.050,=rtl.dcp</Transaction>
+    <Transaction>2016/01/09 16:00:40.000.804,=rtl.dcp</Transaction>
+    <Transaction>2016/01/09 16:01:07.000.372,C:\Users\Julio Cesar\Desktop\Testes\ComponenteNaoVisual\PkgNaoVisual.dproj=C:\Users\Julio Cesar\Documents\RAD Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2016/01/09 16:02:05.000.900,=C:\Users\Julio Cesar\Desktop\Testes\ComponenteNaoVisual\uComponentNaoVisual.pas</Transaction>
+  </Transactions>
+</BorlandProject>

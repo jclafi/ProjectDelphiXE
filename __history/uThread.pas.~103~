@@ -1,0 +1,96 @@
+unit uThread;
+
+interface
+
+uses fForm2, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TClasseThread = Class(TThread)
+  private
+    { Private Declarations }
+
+    FFormProgress : TForm2;
+
+    procedure incLabel;
+  protected
+    { Protected Declarations }
+    procedure Execute; override;
+  public
+    procedure pInitThread;
+    procedure Resume;
+
+    destructor Destroy; override;
+  end;
+
+implementation
+
+{ TClasseThread }
+
+destructor TClasseThread.Destroy;
+begin
+  FFormProgress.Close;
+  FreeAndNil(FFormProgress);
+
+  inherited;
+end;
+
+procedure TClasseThread.Execute;
+var
+  i, j : Integer;
+begin
+  if not FFormProgress.Visible then
+    FFormProgress.Show;
+
+  for I := 0 to 10 do
+  begin
+    Synchronize(IncLabel);
+  end;
+
+ //try
+ //   while not Self.Terminated do
+ //     Application.ProcessMessages;
+ // except on e : exception do
+ // end;
+
+ //try
+ //   repeat
+ //     Application.ProcessMessages;
+ //   until Self.Terminated;
+ // except on e : exception do
+ // end;
+end;
+
+procedure TClasseThread.incLabel;
+begin
+  FFormProgress.ProgressBar1.Position := FFormProgress.ProgressBar1.Position +1;
+  Application.ProcessMessages;
+end;
+
+procedure TClasseThread.pInitThread;
+begin
+  FFormProgress := TForm2.Create(nil);
+  FFormProgress.ProgressBar1.Min := 0;
+  FFormProgress.ProgressBar1.Max := 10;
+end;
+
+procedure TClasseThread.Resume;
+begin
+  Execute;
+end;
+
+end.
+
+{//Chamada
+      objAtualizador := TAtualizacaoProcesso.Create(True);
+      try
+        objAtualizador.FreeOnTerminate := False;
+        objAtualizador.Resume;
+        // Gerar uma nota fiscal para cada pedido de venda, efetuando os lançamentos no financeiro
+        objFaturaPedido.pFaturarPedidoNotaFiscal();
+      finally
+        objAtualizador.Terminate;
+        if Assigned(objAtualizador) then
+          FreeAndNil(objAtualizador);
+      end;
+}

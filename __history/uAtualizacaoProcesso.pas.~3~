@@ -1,0 +1,35 @@
+unit uAtualizacaoProcesso;
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+  TAtualizacaoProcesso = class(TThread)
+  private
+    { Private Declarations }
+  protected
+    { Protected Declarations }
+
+    procedure Execute; override;
+  end;
+
+implementation
+
+uses Forms, Dialogs;
+
+{ TAtualizacaoProcesso }
+
+procedure TAtualizacaoProcesso.Execute;
+begin
+  try
+    repeat
+      Application.ProcessMessages;
+    until Self.Terminated;
+  except on e : exception do
+    ShowMessage('Exceção ao Atualizar Interface da aplicação: Mensagem: ' + e.Message);
+  end;
+end;
+
+end.
