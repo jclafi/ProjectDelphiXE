@@ -1,0 +1,29 @@
+function criptografa (palavraNormal : string) : string;
+var
+   i : Integer;
+   Letra, LetraC, palavraCriptografada  : String;
+begin
+  palavraCriptografada:='';
+  for i:=1 to length(palavraNormal) do begin
+     Letra:= palavraNormal[i];
+     LetraC:= CHR((Ord(Letra[1])+13));
+     palavraCriptografada:=palavraCriptografada+LetraC;
+  end;
+  criptografa := palavraCriptografada;
+end;
+
+function descriptografa (palavraCriptografada : string) : string;
+var
+   i : Integer;
+   letra,
+   letraC,
+   palavraNormal  : String;
+begin
+  palavraNormal:='';
+  for i:=1 to length(palavraCriptografada) do begin
+    Letra:= palavraCriptografada[i];
+    LetraC:=CHR((Ord(Letra[1])-13));
+    palavraNormal:=palavraNormal+LetraC;
+  end;
+  descriptografa := palavraNormal;
+end;
